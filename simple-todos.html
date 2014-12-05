@@ -14,12 +14,18 @@
         {{> task}}
       {{/each}}
     </ul>
-    {{#each players}}
-      {{player}}
-    {{/players}}
+    <ul>
+      {{#each players}}
+        {{> player}}
+      {{/each}}
+    </ul>
   </div>
 </body>
 
 <template name="task">
   <li>{{text}}</li>
+</template>
+
+<template name="player">
+  <li>{{name}}</li>
 </template>
