@@ -14,18 +14,14 @@
         {{> task}}
       {{/each}}
     </ul>
-    <ul>
-      {{#each players}}
-        {{> player}}
-      {{/each}}
-    </ul>
+
+    <form class="new-task">
+      <input type="text" name="text" placeholder="Type to add new tasks" />
+    </form>
+
   </div>
 </body>
 
 <template name="task">
   <li>{{text}}</li>
-</template>
-
-<template name="player">
-  <li>{{name}}</li>
 </template>

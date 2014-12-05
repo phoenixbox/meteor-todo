@@ -5,11 +5,22 @@ if (Meteor.isClient) {
   Template.body.helpers({
     tasks: function(){
       return Tasks.find({});
-    },
-    players: [
-      { name: "Madigan" },
-      { name: "Luke" },
-      { name: "Carniviore" }
-    ]
+    }
+  });
+
+  Template.body.events({
+    'submit .new-task': function (event) {
+      var text = event.target.text.value;
+
+      Tasks.insert({
+        text: text,
+        createdAt: new Date()
+      });
+
+      event.target.text.value = "";
+
+      // Have to return False
+      return false;
+    }
   });
 }
